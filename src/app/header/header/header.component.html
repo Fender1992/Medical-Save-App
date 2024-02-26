@@ -5,8 +5,13 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="row" role="presentation" routerLinkActive="active">
-          <a routerLink="profiles">Profiles</a>
+        <li
+          class="row"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/profiles">Profiles</a>
         </li>
         <li
           class="row"
@@ -16,6 +21,7 @@
         >
           <a routerLink="#">Appointments</a>
         </li>
+
         <li
           class="row"
           role="presentation"
@@ -23,6 +29,9 @@
           style="padding-left: 10px"
         >
           <a routerLink="#">Facilities</a>
+        </li>
+        <li class="row" role="presentation">
+          <a href="#">Logout</a>
         </li>
       </ul>
     </div>

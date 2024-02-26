@@ -1,0 +1,103 @@
+<main class="container">
+  <div class="grid col-xs-12 col-md-6">
+    <section>
+      <hgroup>
+        <h2>Sign Up</h2>
+        <h3>Join our medical community</h3>
+      </hgroup>
+      <p>
+        Please fill in this form to create an account and join our community.
+      </p>
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+      <div
+        *ngIf="isLoading"
+        style="text-align: center; justify-content: center"
+      >
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <form
+        id="signupForm"
+        class="form-vertical"
+        #authForm="ngForm"
+        (ngSubmit)="onSubmit(authForm)"
+        *ngIf="!isLoading"
+      >
+        <input
+          class="form-control"
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          aria-label="First Name"
+          ngModel
+          required
+        />
+        <input
+          class="form-control"
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          aria-label="Last Name"
+          ngModel
+          required
+        />
+        <!-- <input
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Age"
+          aria-label="Age"
+          ngModel
+          required
+        />
+        <input
+          type="text"
+          id="height"
+          name="height"
+          placeholder="Height (in)"
+          aria-label="Height"
+          ngModel
+          required
+        />
+        <input
+          type="text"
+          id="weight"
+          name="weight"
+          placeholder="Weight (lb)"
+          aria-label="Weight"
+          ngModel
+          required
+        /> -->
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          aria-label="Email"
+          ngModel
+          required
+        />
+        <input
+          class="form-control"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          aria-label="Password"
+          ngModel
+          required
+          minlength="6"
+        />
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+  </div>
+</main>
+<footer class="container">
+  <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Use</a></small>
+</footer>

@@ -27,6 +27,7 @@ const appRoutes: Routes = [
     SignInComponent,
     LoadingSpinnerComponent,
     UserDataFormComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,56 @@
-<div class="container"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <h2>Please fill out the user data form</h2>
+      <form #healthForm="ngForm" (ngSubmit)="addUserData(healthForm)">
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input
+            ngModel
+            required
+            type="number"
+            name="age"
+            id="age"
+            class="form-control"
+            placeholder="Enter your age"
+          />
+        </div>
+        <div class="form-group">
+          <label for="height">Height (in):</label>
+          <input
+            required
+            ngModel
+            type="number"
+            name="height"
+            id="height"
+            class="form-control"
+            placeholder="Enter your height in inches"
+          />
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight (kg):</label>
+          <input
+            ngModel
+            required
+            type="number"
+            name="weight"
+            id="weight"
+            class="form-control"
+            placeholder="Enter your weight in kilograms"
+          />
+        </div>
+        <div class="form-group">
+          <label for="health">Health Status:</label>
+          <select name="health" id="health" class="form-control">
+            <option value="">Select health status</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="fair">Fair</option>
+            <option value="poor">Poor</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

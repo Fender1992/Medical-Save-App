@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Changed to min-height to ensure full viewport height */
 }
 
 .container {
@@ -14,8 +14,8 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  width: 90%; /* Allows some margin on small devices */
+  max-width: 400px; /* Maximum width */
 }
 
 h2 {
@@ -65,4 +65,22 @@ h2 {
 
 .form-actions {
   margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+  .form-control,
+  .btn {
+    padding: 8px 10px; /* Smaller padding on form elements */
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 6px 8px; /* Even smaller padding for very small screens */
+    font-size: 14px; /* Smaller font size for buttons */
+  }
 }

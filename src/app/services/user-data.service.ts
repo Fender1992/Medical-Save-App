@@ -10,23 +10,29 @@ export interface resPayload {
 
 @Injectable({ providedIn: 'root' })
 export class UserDataService {
-  dbUrl = 'https://medical-save-default-rtdb.firebaseio.com/health_data.json';
+  // dbUrl = 'https://medical-save-default-rtdb.firebaseio.com/health_data.json';
 
   constructor(private http: HttpClient) {}
 
-  userData(
-    age: number,
-    height: number,
-    weight: number,
-    health: string
-  ): Observable<resPayload> {
-    return this.http.post<resPayload>(this.dbUrl, {
-      age: age,
-      health: health,
-      height: height,
-      weight: weight,
-      token: String,
-      returnSecureToken: true,
-    });
+  // userData(
+  //   age: number,
+  //   height: number,
+  //   weight: number,
+  //   health: string
+  // ): Observable<resPayload> {
+  //   return this.http.post<resPayload>(this.dbUrl, {
+  //     age: age,
+  //     health: health,
+  //     height: height,
+  //     weight: weight,
+  //     token: String,
+  //     returnSecureToken: true,
+  //   });
+  // }
+  postUsers(age: number, height: number, weight: number, health: string) {
+    return this.http.post(
+      'https://dating-app-933fe-default-rtdb.firebaseio.com/users.json',
+      { age: age, height: height, weight: weight, health: health }
+    );
   }
 }

@@ -17,9 +17,14 @@ export class UserDataFormComponent implements OnInit {
       return;
     }
     const age = form.value.age;
-    const height = form.value.height;
-    const weight = form.value.weight;
+    const height = form.value.height + 1;
+    const weight = form.value.weight + 1;
     const health = form.value.health;
-    this.userDataService.userData(age, height, weight, health).subscribe();
+    this.userDataService
+      .postUsers(age, height, weight, health)
+      .subscribe((userResData) => {
+        console.log(userResData);
+      });
+    //   this.userDataService.userData(age, height, weight, health).subscribe();
   }
 }
